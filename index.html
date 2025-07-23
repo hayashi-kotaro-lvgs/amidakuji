@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あみだくじ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>あみだくじ</h1>
+        
+        <!-- 参加者入力セクション -->
+        <div class="input-section">
+            <h2>参加者登録（最大50人）</h2>
+            <div class="participant-input">
+                <input type="text" id="participant-name" placeholder="参加者の名前を入力">
+                <button id="add-participant">追加</button>
+            </div>
+            <div class="participants-list">
+                <h3>参加者一覧 (<span id="participant-count">0</span>/50人)</h3>
+                <div id="participants-display"></div>
+            </div>
+            <button id="clear-all">全削除</button>
+        </div>
+
+        <!-- コントロールセクション -->
+        <div class="controls">
+            <button id="start-amida" disabled>あみだくじスタート！</button>
+            <button id="reset-amida">リセット</button>
+        </div>
+
+        <!-- あみだくじ表示エリア -->
+        <div class="amida-container">
+            <div id="amida-canvas-container">
+                <canvas id="amida-canvas"></canvas>
+                <div id="participant-tokens"></div>
+            </div>
+        </div>
+
+        <!-- 結果表示 -->
+        <div class="results" id="results" style="display: none;">
+            <h2>結果発表！</h2>
+            <div class="winners">
+                <h3>🎉 当選者（8人）</h3>
+                <div id="winners-list"></div>
+            </div>
+            <div class="losers">
+                <h3>残念...次回頑張りましょう</h3>
+                <div id="losers-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
